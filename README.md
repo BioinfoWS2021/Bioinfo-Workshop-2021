@@ -191,7 +191,6 @@ To further test the theory, we'll generate sequence fragments from the original 
 mkdir Length_gradients
 mkdir Length_gradients/18S
 mkdir Length_gradients/16S
-
 </details>
 
 We copy and rename the trimmed orginal reads (we use only the subset of reads that matched the 515F-806R primers for 16S)
