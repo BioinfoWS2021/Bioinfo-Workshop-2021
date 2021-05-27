@@ -62,6 +62,16 @@ cd /export/lv3/scratch/workshop_2021/Users/pramond/S13_LongRead/reads
 mkdir cutadapt_reads
 ```
 
+This is how cutadapt works:
+
+cutadapt -j 0 -e 0.3 -O 12 \ # parameters on the errors tolerated to recognize the primers
+  --discard-untrimmed \ # we want only the reads that were cut
+  -a CCAGCASCYGCGGTAATTCC...TYRATCAAGAACGAAAGT \ # sequence 3-5' of forward primer ... reverse complement of the sequence 3-5' of reverse primer
+  -a ACTTTCGTTCTTGATYRA...GGAATTACCGCRGSTGCTGG \ # sequence 3-5' of reverse primer ... reverse complement of the sequence 3-5' of forward primer
+  -M 600 \ # to make sure we get the subregions targeted by the primers we add a read length selection
+  -o cutadapt_reads/18S_sub_V4_STOECK.fasta \ # output directory
+18S.fastq # file to work on
+
 To extract the 18S V4 region, we use the primer sequences that were developed by Stoeck et.al. (2010) as the adapter sequence parameter in *cutadapt* as follows:
 
 ```
@@ -299,10 +309,10 @@ We'll now graphically compare the effects of long versus short amplicons of the 
 To launch R studio in ADA: [http://ada.nioz.nl:8787/](http://ada.nioz.nl:8787/)
 <p>&nbsp;</p>
 
-![16S_plot]()
+![16S_plot](https://user-images.githubusercontent.com/25445935/119827287-40e7cf80-bef9-11eb-81e1-eb27bedf7fc5.png)
 Fig. 2:
 
-![18S_plot]()
+![18S_plot](https://user-images.githubusercontent.com/25445935/119827412-62e15200-bef9-11eb-851a-4c45f9ee7a48.png)
 Fig. 3:
 
 ---
