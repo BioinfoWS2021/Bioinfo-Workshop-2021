@@ -310,10 +310,12 @@ To launch R studio in ADA: [http://ada.nioz.nl:8787/](http://ada.nioz.nl:8787/)
 <p>&nbsp;</p>
 
 ![16S_plot](https://user-images.githubusercontent.com/25445935/119827287-40e7cf80-bef9-11eb-81e1-eb27bedf7fc5.png)
-Fig. 2:
+Fig. 2
+
+<p>&nbsp;</p>
 
 ![18S_plot](https://user-images.githubusercontent.com/25445935/119827412-62e15200-bef9-11eb-851a-4c45f9ee7a48.png)
-Fig. 3:
+Fig. 3
 
 ---
 ###### Refs:
