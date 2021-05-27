@@ -190,7 +190,7 @@ To further test the theory, we'll generate sequence fragments from the original 
 <pre><code>cd /export/lv3/scratch/workshop_2021/Users/*username*/S13_LongRead/reads/cutadapt_reads/
 mkdir Length_gradients
 mkdir Length_gradients/18S
-mkdir Length_gradients/16S
+mkdir Length_gradients/16S</code></pre>
 </details>
 
 We copy and rename the trimmed orginal reads (we use only the subset of reads that matched the 515F-806R primers for 16S)
@@ -201,7 +201,6 @@ We copy and rename the trimmed orginal reads (we use only the subset of reads th
 </summary>
 <pre><code>cp 18S_og_reads_trimm.fastq Length_gradients/18S/18S_trim_original.fastq
 cp 16S_og_reads_806R_trimm.fastq Length_gradients/16S/16S_trim_original.fastq</code></pre>
-
 </details>
 
 <p>&nbsp;</p>
