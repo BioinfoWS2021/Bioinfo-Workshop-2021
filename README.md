@@ -58,7 +58,7 @@ The original reads generated from the MinION sequencing are ~1100 bp for the 16S
 First let's create a directory for the output of *cutadapt*:
 
 ```
-cd /export/lv3/scratch/workshop_2021/Users/pramond/S13_LongRead/reads
+cd /export/lv3/scratch/workshop_2021/Users/your_username/S13_LongRead/reads
 mkdir cutadapt_reads
 ```
 
@@ -87,7 +87,7 @@ cutadapt -j 0 -e 0.3 -O 12 --discard-untrimmed -a GTGCCAGCMGCCGCGGTAA...ATTAGAWA
 Or alternatively, with the 515F-926R primer pair<sup>7</sup>, which targets the V4-V5 region:
 
 ```
-cutadapt -j 0 -e 0.3 -O 12 --discard-untrimmed -a GTGCCAGCMGCCGCGGTAA...ATTAGAWADDDBDGTAGTCC -a GGACTACHVHHHTWTCTAAT...TTACCGCGGCKGCTGGCAC -M 600 -o cutadapt_reads/16S_sub_V4_806R.fasta 16S.fastq
+cutadapt -j 0 -e 0.3 -O 12 --discard-untrimmed -a GTGCCAGCMGCCGCGGTAA...ATTAGAWADDDBDGTAGTCC -a GGACTACHVHHHTWTCTAAT...TTACCGCGGCKGCTGGCAC -M 600 -o cutadapt_reads/16S_sub_V4_926R.fasta 16S.fastq
 ```
 
 Now, let's make a list of the reads that matched the adapter(primer) sequences from the *cutadapt* step above.
