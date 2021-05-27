@@ -293,7 +293,7 @@ To launch R studio in ADA: [http://ada.nioz.nl:8787/](http://ada.nioz.nl:8787/)
 ![16S_plot]()
 Fig. 2:
 
-![16S_plot]()
+![18S_plot]()
 Fig. 3:
 
 ---
