@@ -13,9 +13,10 @@ The primary aim of this tutorial is to illustrate the benefits of longer amplico
 <p>&nbsp;</p>
 
 ### 1. Dataset
-We will work with long-read 16S and 18S rRNA gene amplicon datasets generated from samples taken from the Wadden Sea and Southern Ocean in this practical session.
+We will work with long-read 16S and 18S rRNA gene amplicon datasets generated from samples taken from the Wadden Sea time series and Rothera Oceanographic and Biological Time Series (RaTS - Southern Ocean) in this practical session.
 
 ![WS_SO_Together](https://user-images.githubusercontent.com/25445935/119269708-5a3b0400-bbf9-11eb-8827-19c438bab66c.png)
+Fig. 1: Map of sampling sites
 
 16S amplicons were generated with the primer set A519F-1492R-pB-3771<sup>3</sup>, while the 18S amplicons were generated with the primer set Euk528F-U1391R<sup>4</sup>.
 
@@ -287,7 +288,13 @@ We'll now graphically compare the effects of long versus short amplicons of the 
 ```
 
 To launch R studio in ADA: [http://ada.nioz.nl:8787/](http://ada.nioz.nl:8787/)
+<p>&nbsp;</p>
 
+![16S_plot]()
+Fig. 2:
+
+![16S_plot]()
+Fig. 3:
 ---
 ###### Refs:
 
