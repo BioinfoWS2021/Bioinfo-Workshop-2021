@@ -26,14 +26,14 @@ First let's get some data into the project folder. Login to ADA, and *cd* to the
 cd /export/lv4/projects/workshop_2021/S13_LongRead/
 ```
 
-Copy the sequence data fastq files to your working folders. You are encouraged to figure out how to do this based on unix commands covered in the previous workshop sessions, but for simplicity we have also provided the code below.
+Make a symbolic link of the sequence data fastq files to your working folders. You are encouraged to figure out how to do this based on unix commands covered in the previous workshop sessions, but for simplicity we have also provided the code below.
 
 <details>
 <summary>
 <a class="btnfire small stroke"><em class="fas fa-chevron-circle-down"></em>&nbsp;&nbsp;View code</a>    
 </summary>
-<pre><code>cp -r /export/lv4/projects/workshop_2021/S13_LongRead/ /export/lv3/scratch/workshop_2021/Users/your_username</code></pre>
-<pre><code>cd /export/lv3/scratch/workshop_2021/Users/your_username/S13_LongRead/</code></pre>
+<pre><code>cp -rsv /export/lv4/projects/workshop_2021/S13_LongRead/ /export/lv3/scratch/bioinformatics_workshop/Users/your_username</code></pre>
+<pre><code>cd /export/lv3/scratch/bioinformatics_workshop/Users/your_username/S13_LongRead/</code></pre>
 </details>
 
 
@@ -58,7 +58,7 @@ The original reads generated from the MinION sequencing are ~1100 bp for the 16S
 First let's create a directory for the output of *cutadapt*:
 
 ```
-cd /export/lv3/scratch/workshop_2021/Users/your_username/S13_LongRead/reads
+cd /export/lv3/scratch/bioinformatics_workshop/Users/your_username/S13_LongRead/reads
 mkdir cutadapt_reads
 ```
 
@@ -184,7 +184,7 @@ mothur "#set.dir(input=/export/lv4/projects/NIOZ200/Data/Analysis_Bonito/6_UMI_B
 To further test the theory, we'll generate sequence fragments from the original long reads with 100bp length variations (i.e. 100bp, 200bp, 300bp... 1000bp, original). Make a new folder for the length gradient fragments, and then subfolders within that folder for the 16S and 18S fragments. Make a copy of the fastq file containing the trimmed long reads.
 
 ```
-cd /export/lv3/scratch/workshop_2021/Users/*username*/S13_LongRead/reads/cutadapt_reads/
+cd /export/lv3/scratch/bioinformatics_workshop/Users/*username*/S13_LongRead/reads/cutadapt_reads/
 mkdir Length_gradients
 mkdir Length_gradients/18S
 mkdir Length_gradients/16S
@@ -263,10 +263,10 @@ sed -i '1~4s/\s\+/_18S_trim_1000bp.fastq /' 18S_trim_1000bp.fastq
 sed -i '1~4s/\s\+/_original /' 18S_trim_original.fastq
 ```
 
-Again, we'll need to convert all the the fastq files to fasta before the taxonomic annotation step. We'll use a loop to repeat the conversion for all the fastq files in the folder. (don't get on my nerves, change *username*).
+Again, we'll need to convert all the the fastq files to fasta before the taxonomic annotation step. We'll use a loop to repeat the conversion for all the fastq files in the folder. (remember, change *username*).
 
 ```
-for i in /export/lv3/scratch/workshop_2021/Users/*username*/S13_LongRead/reads/cutadapt_reads/Length_gradients/*/*fastq;
+for i in /export/lv3/scratch/bioinformatics_workshop/Users/*username*/S13_LongRead/reads/cutadapt_reads/Length_gradients/*/*fastq;
 do
 seqtk seq -A $i > `ls $i | sed 's/\.fastq/\.fasta/'`;
 done
@@ -277,7 +277,7 @@ Finally, let's assign taxonomy for all sequences of the different length gradien
 ```
 # Assign taxonomy for all fasta files 16S folder (I swear to god, change *username* or I will track you, find you and kill you)
 
-for i in /export/lv3/scratch/workshop_2021/Users/*username*/S13_LongRead/reads/cutadapt_reads/Length_gradients/16S/*.fasta;
+for i in /export/lv3/scratch/bioinformatics_workshop/Users/*username*/S13_LongRead/reads/cutadapt_reads/Length_gradients/16S/*.fasta;
 do
 mothur "#set.dir(input=/export/lv4/projects/NIOZ200/Data/Analysis_Bonito/6_UMI_BINNING/longread_wk/databases/);classify.seqs(fasta=$i, reference=silva.nr_v138_1.align, taxonomy=silva.nr_v138_1.tax, cutoff=80)"
 done
@@ -286,7 +286,7 @@ done
 ```
 # Assign taxonomy for all fasta files 18S folder (you know what to do by now... or you are dead)
 
-for i in /export/lv3/scratch/workshop_2021/Users/*username*/S13_LongRead/reads/cutadapt_reads/Length_gradients/18S/*.fasta;
+for i in /export/lv3/scratch/bioinformatics_workshop/Users/*username*/S13_LongRead/reads/cutadapt_reads/Length_gradients/18S/*.fasta;
 do
 mothur "#set.dir(input=/export/lv4/projects/NIOZ200/Data/Analysis_Bonito/6_UMI_BINNING/longread_wk/databases/);classify.seqs(fasta=$i, reference=pr2_version_4.13.0_18S_mothur.fasta, taxonomy=pr2_version_4.13.0_18S_mothur.tax, cutoff=80)"
 done
@@ -299,7 +299,7 @@ done
 We'll now graphically compare the effects of long versus short amplicons of the same sequences on the quality of taxonomic assignments. We'll do this in R studio, with an R script that can be found in:
 
 ```
-/export/lv3/scratch/workshop_2021/Users/*username*/S13_LongRead/scripts
+/export/lv3/scratch/bioinformatics_workshop/Users/*username*/S13_LongRead/scripts
 ```
 
 To launch R studio in ADA: [http://ada.nioz.nl:8787/](http://ada.nioz.nl:8787/)
