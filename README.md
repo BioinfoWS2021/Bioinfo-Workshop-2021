@@ -45,10 +45,11 @@ Make a symbolic link of the sequence data fastq files to your working folders. Y
 2. seqkit v0.14.0
 3. MOTHUR v.1.40.4
 
-The programs should already installed on ADA, but if *seqkit* is not available to you, you can install it with:
+The programs should already installed on ADA. You can activate *seqkit* by:
 
 ```
-conda install -c bioconda seqkit
+source .bashrc.conda3 seqkit
+conda activate seqkit
 ```
 <p>&nbsp;</p>
 
